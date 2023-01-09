@@ -1,0 +1,238 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	outline: 0px;
+}
+
+html {
+	overflow: -moz-scrollbars-vertical;
+}
+
+.nul {
+	display: none;
+}
+
+html, body {
+	height: 100%;
+}
+
+hr
+{
+background-color:#d4d4d4;
+color:#d4d4d4;
+height:1px;
+border:0px;
+margin-left: 7px;
+margin-right: 7px;
+clear:both;
+}
+
+body{
+  font-family: Verdana,Sans-Serif;;
+  font-size:12px;
+  color:#000000;
+	background-color:#FFF;
+  margin:0px;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+#pageheader{
+	border-bottom: 1px dashed #888;
+	color: #505050;
+	padding: 1em;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+#pageheader h1 {
+	font: bold 2.3em verdana, Sans-Serif; 
+	height: 18px;
+	color: #333;
+	padding: 3px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-right: 20px;
+}
+
+#pageheader h1 small { font-size: 80%; color: #444;}
+#pageheader h1 small b { font-size: 97%; color: #222; }
+/*
+#pageheader h1 small b { font-size: 97%; color: #0000A0; }
+#pageheader h1 small b { font-size: 97%; color: #1589FF; }
+*/
+
+a { color: #0066B3; background: inherit; text-decoration: none }
+ul { padding: 0; margin: 0; list-style-type: none }
+
+#main { 
+	background: #FFF; 
+	margin: 25px 0 15px 0; 
+	color: #666; 
+	position: relative;
+}
+
+#main #rightside {
+	width: 250px;
+	float: right;
+	background: #FFF;
+	margin-right: 10px;
+	margin-left: 10px;
+	color: #444;
+	position: absolute;
+	left: 640px;
+} 
+
+#main #rightside .box {
+	background: #efefef;
+	margin-bottom: 20px;
+	padding: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-right:15px;
+	color: #666;
+	border: 1px solid #999;
+}
+
+#main #rightside h4 {
+	font: bold 1.0em verdana, Sans-Serif; 
+  background: #CDCDCD;
+	height: 18px;
+	padding: 3px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	color: #333;
+	margin-right: 20px;
+	margin: 0 auto -9px;
+	border: 1px solid #999;
+}
+
+#main #rightside a {
+	color: #1589FF;
+	margin-left: 10px;
+}
+
+#rightside a:before { content: "\00BB \0020"; }
+
+#main #mainside {
+  width: 550px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #444;
+  float: left;
+	background-color: transparent;
+	margin-left: 15px;
+	margin: 0px auto 30px;
+  position: relative;
+	text-align: justify;
+}
+
+#bar-box{ 
+	margin-left:10px; 
+	margin-bottom:20px; 
+	padding-top:5px; 
+	padding-left:15px; 
+	padding-bottom:5px; 
+	border-left: 5px solid #888;
+}
+#bar-box code { 
+	text-decoration: none;
+	background: #FFF;
+	border: none;
+	font: 1.0em; 
+	font-size:110%;
+	font-family: "Courier New", Courier; 
+	color: #555;
+}
+
+#reverse-box{ 
+	margin-left:10px; 
+	margin-bottom:20px; 
+	padding-top:5px; 
+	padding-left:15px; 
+	padding-bottom:5px; 
+	background: #AAA;
+	color: #FFF;
+	font-family: "Courier New", Courier; 
+	font-size:110%;
+}
+
+#mainside h1 { padding: 15px 0 10px 0 }
+#mainside h2 { padding: 15px 0 10px 0; color: #555; text-indent: 17px;}
+#mainside h3 { padding: 15px 0 10px 0; font-size: 100%; margin-left: 5px; text-indent: 17px; }
+#mainside h6 { padding: 0px 0 10px 0; font:10px }
+#mainside ul { margin-left: 20px; padding-left 10px; list-style: none}
+#mainside ul li:before { content: "+ "; }
+#mainside ul li strong { color: #1589FF; }
+#mainside p { padding: 0px 0 10px 0 }
+#mainside p strong { color: #1589FF; }
+
+#command {
+	color: #444;
+  clear: none;
+	background: #FFF;
+	height: auto !important;
+	height: 100%;
+  float: left;
+  width: 100%;
+  margin-right: 5px;
+//  margin-left: 0px;
+ // padding-left: 15px;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  clear: both;
+  width:800px;
+}
+
+#command table { 
+	border-top: 1px dashed #888;
+	border-bottom: 1px dashed #888;
+	margin-left: 10px;
+}
+#command table tr  { padding-bottom: 10px; }
+#command td  { 
+	vertical-align: top; 
+	padding: 10px;
+	padding-right: 20px;
+}
+
+#command code { 
+	text-decoration: none;
+	background: #FFF;
+	border: none;
+	font: 1.0em; 
+	font-size:110%;
+	font-family: "Courier New", Courier; 
+	color: #555;
+}
+
+#command h1  { margin: 0 15px 10px 15px; padding: 10px 0 10px 0; font: bold 1.9em Arial, Arial, Sans-Serif }
+#command h2  { margin: 0 15px 10px 15px; padding: 10px 0 10px 0; font: bold 1.2em Arial, Arial, Sans-Serif }
+#command h3  { margin: 0 15px 10px 20px; padding: 10px 0 10px 0; font: 1.2em Arial, Arial, Sans-Serif }
+#command h4  { margin: 0 15px 10px 25px; padding: 10px 0 10px 0; font: 1.1em Arial, Arial, Sans-Serif }
+#command h5 strong { color: #1589FF; }
+#command p   { margin: 0 15px 10px 15px; color: #444 }
+#command ul  { margin: 0 15px 10px 15px; padding-left: 0px; margin: 0 }
+#command pre { margin: 0px 15px 15px 25px }
+#command li  { margin: 0 15px 1px 15px; color: #444 }
+#command tt { font: .8em; font-family: "Courier New", Courier; }
+
+
+#push{
+	height: 60px;
+}
+
+#footer {
+	background: #eee;
+	height: 60px;
+}
+#footer p  { padding: 15px }
+
+#toc ol { list-style: roman }
+

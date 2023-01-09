@@ -1,0 +1,278 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	outline: 0px;
+}
+
+html {
+	overflow: -moz-scrollbars-vertical;
+}
+
+.nul {
+	display: none;
+}
+
+html, body {
+	height: 100%;
+}
+
+hr
+{
+background-color:#d4d4d4;
+color:#d4d4d4;
+height:1px;
+border:0px;
+margin-left: 7px;
+margin-right: 7px;
+clear:both;
+}
+
+body{
+  font-family: Verdana,Sans-Serif;;
+  font-size:12px;
+  color:#000000;
+  #background-color:#F6F4F0;
+  background: rgb(230,230,230);
+  margin:0px;
+  line-height: 1.6em;
+  }
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0px auto -24px auto;
+
+	width: 851px;
+	background-image: url(frame-sides.png);
+}
+
+#subheader { 
+	clear: both; 
+	border-top: 1px dotted #888;	
+	border-bottom: 1px dotted #888;
+	background: #eaeaea;
+	color: #505050;
+	padding: 1em;
+	margin: 15px 0px 10px 0px;
+	margin-left: 15px;
+        margin-right: 15px;
+}
+
+a { color: #0066B3; background: inherit; text-decoration: none }
+ul { padding: 0; margin: 0; list-style-type: none }
+li {  }
+
+#main { background: #FFF; margin: 25px 0 15px 0; color: #666; position: relative}
+
+#main #rightside {
+	width: 300px;
+	float: right;
+	background: #FFF;
+	margin-right: 10px;
+	color: #555;
+        position: absolute;
+        left: 510px;
+} 
+
+#main #content {
+	width: 300px;
+#	float: left;
+	background: #FFF;
+	margin-right: 10px;
+	color: #555;
+	
+} 
+
+#main #rightside .box {
+	background: #efefef;
+	margin-bottom: 10px;
+	padding: 5px;
+        margin-right: 20px;
+	color: #555;
+}
+
+#main #rightside h2 {
+	font: bold 1.0em Arial, Arial, Sans-Serif; 
+    background: #CDCDCD url(greyc.gif) no-repeat top right;
+	height: 18px;
+	padding: 3px;
+	color: #666;
+margin-right: 20px;
+}
+
+#main #rightside a {
+        border: 0;
+        text-decoration: none;
+}
+
+.tooltip {
+    border-bottom: 1px dotted #0077AA;
+#   cursor: help;
+}
+
+.tooltip::after {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px 8px 8px 0px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    content: attr(tt); /* The main part of the code, determining the content of the pop-up prompt */
+    margin-top: -24px;
+    opacity: 0; /* Our element is transparent... */
+    padding: 3px 7px;
+    position: absolute;
+    visibility: hidden; /* ...and hidden. */
+             
+    transition: all 0.4s ease-in-out; /* To add some smoothness */
+}
+         
+.tooltip:hover::after {
+    opacity: 1; /* Make it visible */
+    visibility: visible;
+}
+
+h1 {font-size:210%;margin-top:0px;font-weight:normal}
+
+.htooltip span { /* The appearance of our tooltip */
+    background-color: rgba(0,0,0, 0.8);
+    border-radius: 15px 15px 15px 0px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-left: 2px;
+    margin-top: -75px;
+    opacity: 0; /* Make it transparent */
+    padding: 10px 10px 10px 40px;
+    position: absolute;
+    text-decoration: none;
+    visibility: hidden; /* and hidden */
+    width: 350px;
+    z-index: 10;
+}
+         
+.htooltip:hover span { /* show the tooltip when hover */
+    opacity: 1;
+    visibility: visible;
+}
+         
+.htooltip span img { /* example image */
+    border: 0 none;
+    float: left;
+    margin: -71px 0 0 -234px;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+}
+         
+.htooltip:hover span i { /* show the image */
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#main #leftside {
+        width: 400px;
+	padding-left: 10px;
+	color: #555;
+        float: left;
+	background: #FFF;
+	margin-left: 8px;
+        position: relative;
+}
+
+#manual2 {
+	border-top: 1px dotted #888;	
+	border-bottom: 1px dotted #888;
+	background: #eaeaea;
+	color: #505050;
+        padding: 10;
+	margin: 15px 0px 10px 0px;
+	height: auto !important;
+	height: 100%;
+	margin: 0px auto -24px auto;
+}
+
+#manual {
+	margin: 15px 0px 10px 0px;
+//	margin-left: 25px;
+	color: #555;
+        clear: none;
+	background: #FFF;
+	height: auto !important;
+	height: 100%;
+        float: left;
+        width: 100%;
+	margin: 0px auto -24px auto;
+        margin-right: 5px;
+        margin-left: 0px;
+        padding-left: 15px;
+        display: inline-block;
+//        position: absolute;
+        top: 0px;
+        left: 0px;
+        clear: both;
+        width:836px;
+	background-image: url(frame-sides.png);
+}
+
+#leftside h1 { padding: 15px 0 10px 0 }
+#leftside h2 { padding: 15px 0 10px 0; color: #555; text-indent: 17px; background: #FFF url(images/head.gif) no-repeat left; }
+#leftside h3 { padding: 15px 0 10px 0; font-size: 100%; margin-left: 5px; text-indent: 17px; background: #FFF url(../images/head.gif) no-repeat left; }
+#leftside ul { margin-left: 24px; padding-left 24px; list-style: none}
+#leftside ul li:before { content: "\00BB \0020"; }
+#leftside li { }
+#leftside p { padding: 0px 0 10px 0 }
+
+#footer {
+//	clear: both; 
+ //       position: absolute;
+ //       bottom: 0;
+        text-align:center;
+	border-top: 1px dotted #888;	
+	border-bottom: 1px dotted #888;
+	background: #fff;
+	color: #505050;
+	padding: 1em;
+	margin: 15px 0px 10px 0px;
+	margin-left: 15px;
+        margin-right: 15px;
+        width: 800px;
+}
+#footer p  { padding: 5px }
+#footer .rside { float: right; display: inline; padding: 5px; text-align: right}
+
+#toc ol { list-style: roman }
+
+
+#manual h1  { margin: 0 15px 10px 15px; padding: 10px 0 10px 0; font: bold 1.9em Arial, Arial, Sans-Serif }
+#manual h2  { margin: 0 15px 10px 15px; padding: 10px 0 10px 0; font: bold 1.2em Arial, Arial, Sans-Serif }
+#manual h3  { margin: 0 15px 10px 20px; padding: 10px 0 10px 0; font: 1.2em Arial, Arial, Sans-Serif }
+#manual h4  { margin: 0 15px 10px 25px; padding: 10px 0 10px 0; font: 1.1em Arial, Arial, Sans-Serif }
+#manual p   { margin: 0 15px 10px 15px; color: #444 }
+#manual table { margin-top: 15px }
+#manual ul  { margin: 0 15px 10px 15px; padding-left: 0px; margin: 0 }
+#manual pre { margin: 0px 15px 15px 25px }
+#manual li  { margin: 0 15px 1px 15px; color: #444 }
+#TOC ul li:before { content: ""; }
+#manual ol  { margin-left: 24px;
+      padding-left 24px;
+      list-style: decimal }
+#manual td  { vertical-align: top; }
+#manual blockquote { margin-left: 35px; font-family: "Courier New", Courier; }
+#manual tt { font: .8em; font-family: "Courier New", Courier; }
+#manual code { font: .8em; font-family: "Courier New", Courier; }
+#manual .date { border-top: 1px solid #e5e5e5; text-align: right; margin-bottom: 25px; margin-top: 5px;}
+#manual .date a, #main #rightside a { border: 0; text-decoration: none; }
+#manual .date a, #main #rightside a { border: 0; text-decoration: none; }
+#manual td { vertical-align: top; }
+
+div.codeblock
+{
+        color: #000000
+//        background-color: #F5F5FF;
+        background-color: #DEDEDE;
+        padding: 10px;
+        margin: 15px 15px 20px 0px;
+        border: 1px solid #0066b3;
+}
+

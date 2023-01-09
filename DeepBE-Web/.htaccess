@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+# Turn on URL rewriting
+RewriteEngine On
+
+# If your website begins from a folder e.g localhost/my_project then 
+# you have to change it to: RewriteBase /my_project/
+# If your site begins from the root e.g. example.local/ then
+# let it as it is
+RewriteBase /DeepBE-Web/
+
+# Protect application and system files from being viewed when the index.php is missing
+RewriteCond $1 ^(application|system|private|logs)
+# Rewrite to index.php/access_denied/URL
+RewriteRule ^(.*)$ index.php/access_denied/$1 [PT,L]
+
+# Allow these directories and files to be displayed directly:
+RewriteCond $1 ^(index\.php|robots\.txt|opensearch\.xml|favicon\.ico|bootstrap|css|data|images|js|src|Theano|anaconda3|bin)
+# No rewriting
+RewriteRule ^(.*)$ - [PT,L]
+
+# Rewrite to index.php/URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [PT,L]
+</IfModule>
+
+<IfModule mod_php5.c>
+	php_value upload_max_filesize 1000M
+	php_value post_max_size 1000M
+</IfModule>
