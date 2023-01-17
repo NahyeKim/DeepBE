@@ -42,8 +42,6 @@ def preprocess_seq(data):
     print("Preprocessing the sequence done")
     return DATA_X
 
-seq_length = 30
-
 dataset_seq_masked = preprocess_seq(dataset1['seq'])
 dataset_seq_masked = pd.Series(list(dataset_seq_masked),name='seq_one')
 
