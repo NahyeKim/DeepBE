@@ -80,6 +80,37 @@ def preprocess_seq_pam(data):
     print("Preprocessing the sequence done")
     return DATA_X
 
+start_proportion=4
+length_proportion=20
+
+def preprocess_seq_proportion(data):
+    print("Start preprocessing the sequence done 2d")
+    global length_proportion
+    global start_proportion
+
+    DATA_X = np.zeros((len(data),length_proportion,4), dtype=int)
+    print(np.shape(data), len(data), length_proportion)
+    for l in range(len(data)):
+        for i in range(length_proportion):
+
+            try: data[l][i+start_proportion]
+            except: print(data[l], i+start_proportion, length_proportion, len(data))
+
+            if data[l][i+start_proportion]in "Aa":    DATA_X[l, i, 0] = 1
+            elif data[l][i+start_proportion] in "Cc": DATA_X[l, i, 1] = 1
+            elif data[l][i+start_proportion] in "Gg": DATA_X[l, i, 2] = 1
+            elif data[l][i+start_proportion] in "Tt": DATA_X[l, i, 3] = 1
+            elif data[l][i+start_proportion] in "Xx": pass
+            else:
+                print("Non-ATGC character " + data[l])
+                print(i)
+                print(data[l][i+start_proportion])
+                sys.exit()
+        #loop end: i
+    #loop end: l
+    print("Preprocessing the sequence done")
+    return DATA_X
+
 
 dataset_seq_masked = preprocess_seq(dataset_['target + PAM'])
 dataset_seq_masked = pd.Series(list(dataset_seq_masked),name='seq')
@@ -87,10 +118,14 @@ dataset_seq_masked = pd.Series(list(dataset_seq_masked),name='seq')
 dataset_seq_masked_pam = preprocess_seq_pam(dataset_['target + PAM'])
 dataset_seq_masked_pam = pd.Series(list(dataset_seq_masked_pam ),name='seq_pam')
 
-dataset_all = pd.concat([dataset_,dataset_seq_masked,dataset_seq_masked_pam],axis=1)
+dataset_seq_masked_proportion = preprocess_seq_proportion(dataset_['target + PAM'])
+dataset_seq_masked_proportion = pd.Series(list(dataset_seq_masked_proportion ),name='seq_proportion')
+
+dataset_all = pd.concat([dataset_,dataset_seq_masked,dataset_seq_masked_pam,dataset_seq_masked_proportion],axis=1)
 
 X_test_seq_predict = np.stack(dataset_all['seq'])
 X_test_seq_pam_predict = np.stack(dataset_all['seq_pam'])
+X_test_seq_proportion_predict = np.stack(dataset_all['seq_proportion'])
 
 for i in range(len(model_list)):
     hyperparameter_prediction = model_list[0].predict(X_test_seq_pam_predict, batch_size=128)
@@ -99,16 +134,17 @@ for i in range(len(model_list)):
     dataset_all = pd.concat([dataset_all.reset_index(drop=True),hyperparameter_prediction.reset_index(drop=True)],axis=1)
 
 for i in range(len(dataset_all)):
-    dataset_all.iloc[i,np.r_[4:dataset_all.iloc[i,1]+4, dataset_all.iloc[i,1]+5:13]] = 0
+    dataset_all.iloc[i,np.r_[5:dataset_all.iloc[i,1]+5, dataset_all.iloc[i,1]+6:14]] = 0
 
-dataset_all = pd.concat([dataset_all,dataset_all.iloc[:,4:13].sum(axis=1)], axis=1)
+dataset_all = pd.concat([dataset_all,dataset_all.iloc[:,5:14].sum(axis=1)], axis=1)
 dataset_all = dataset_all.rename(columns={0: 'Sum'})
 
 X_test_seq = np.stack(dataset_all['seq'])
 X_test_seq_pam = np.stack(dataset_all['seq_pam'])
+X_test_seq_proportion = np.stack(dataset_all['seq_proportion'])
 X_test_PAM_predict = np.stack(dataset_all['Sum'])
 
-hyperparameter_prediction = final_model.predict([[X_test_seq,X_test_PAM_predict],X_test_seq_pam], batch_size=128)
+hyperparameter_prediction = final_model.predict([[X_test_seq,X_test_PAM_predict],X_test_seq_proportion], batch_size=128)
 hyperparameter_prediction = pd.DataFrame(hyperparameter_prediction)
 
 alist = []
