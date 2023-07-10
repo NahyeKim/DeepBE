@@ -5,6 +5,9 @@
 
 Predicting base editing outcomes of 63 base editors
 
+```diff
+- If downloading models for use, please download them directly from the release note.
+```
 
 ## System Requirements
 
